@@ -1,0 +1,16 @@
+<div class="container">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Filtrer</mat-label>
+    <input matInput [(ngModel)]="searchTerm" name="searchText" />
+  </mat-form-field>
+  <form (ngSubmit)="addTask()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Saisir une tâche</mat-label>
+      <input matInput [(ngModel)]="taskTitle" name="searchText" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Ajouter</button>
+  </form>
+  @for (item of filterdTasks(); track $index) {
+  <app-task-item [task]="item" (removeTask)="removeTask($event)" />
+  }
+</div>

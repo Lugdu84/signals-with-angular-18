@@ -1,0 +1,8 @@
+<mat-card>
+  <mat-card-content>
+    {{ task().title }}
+    <button mat-raised-button color="primary" (click)="removeTask.emit(task())">
+      Supprimer
+    </button>
+  </mat-card-content>
+</mat-card>
